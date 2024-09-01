@@ -1,0 +1,17 @@
+{
+  "name": "download_video_backend",
+  "version": "1.0.0",
+  "description": "Download video from youtube, tiktok, facebook and more",
+  "main": "index.js",
+  "author": "Nguyen Nhu Khanh <kwalker.nnk@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "rahad-media-downloader": "^2.1.14"
+  }
+}
