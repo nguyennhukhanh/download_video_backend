@@ -100,4 +100,14 @@ app.get(apiPrefix + "/download", async (req, res) => {
   }
 });
 
+app.get("/health", (req, res) => {
+  return res
+    .status(200)
+    .send({ message: "Success", data: `Server is running!` });
+});
+
+app.get("*", (req, res) => {
+  return res.status(404).send({ message: "Failed", data: "Not found" });
+});
+
 app.listen(port, () => console.log(`Server listening on port ${port}`));

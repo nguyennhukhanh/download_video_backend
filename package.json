@@ -4,6 +4,8 @@
   "description": "Download video from youtube, tiktok, facebook and more",
   "main": "index.js",
   "author": "Nguyen Nhu Khanh <kwalker.nnk@gmail.com>",
+  "repository": "https://github.com/nguyennhukhanh/download_video_backend",
+  "private": true,
   "license": "MIT",
   "scripts": {
     "start": "node index.js"
