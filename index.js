@@ -4,9 +4,13 @@ const cors = require("cors");
 const helmet = require("helmet");
 
 const app = express();
-app.use(cors({
-  origin: 'https://stream-saver-front-end.vercel.app'
-}));
+app.use(
+  cors({
+    origin: "https://stream-saver-front-end.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.use(helmet());
 
 const apiPrefix = "/api/v1";
