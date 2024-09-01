@@ -2,6 +2,7 @@ const express = require("express");
 const downloader = require("rahad-media-downloader");
 const cors = require("cors");
 const helmet = require("helmet");
+const schedule = require("./cron");
 
 const app = express();
 app.use(
@@ -117,3 +118,4 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
+schedule();
