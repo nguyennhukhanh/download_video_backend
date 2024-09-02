@@ -28,16 +28,19 @@ app.get(apiPrefix + "/download", async (req, res) => {
     let response = "";
     let result = {};
 
-    if (/^https:\/\/www\.tiktok\.com\/@[\w\.]+\/video\/\d+/.test(url)) {
+    if (
+      /^https:\/\/www\.tiktok\.com\/@[\w\.]+\/video\/\d+/.test(url) ||
+      /^https:\/\/vt.tiktok\.com\/[\w-]+/.test(url)
+    ) {
       type = "tiktok";
     } else if (
       /^https:\/\/www\.youtube\.com\/watch\?v=[\w-]+/.test(url) ||
       /^https:\/\/youtu\.be\/[\w-]+/.test(url)
     ) {
       type = "youtube";
-    } else if (/^https:\/\/www\.facebook\.com\/share\/v\/[\w-]+/.test(url)) {
+    } else if (/^https:\/\/www\.facebook\.com\/[\w-]+/.test(url)) {
       type = "facebook";
-    } else if (/^https:\/\/www\.instagram\.com\/reel\/[\w-]+/.test(url)) {
+    } else if (/^https:\/\/www\.instagram\.com\/[\w-]+/.test(url)) {
       type = "instagram";
     } else {
       type = "unknown";
